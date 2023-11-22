@@ -18,10 +18,15 @@ export function Home() {
           email: values.email,
           address: values.address,
         },
-        items: values.toppings.map((topping) => ({
-          type: topping,
-          amount: 1,
-        })),
+        items: [
+          {
+            type: "pepperoni",
+          },
+        ],
+        // items: values.toppings.map((topping) => ({
+        //   type: topping,
+        //   amount: 1,
+        // })),
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

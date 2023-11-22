@@ -40,7 +40,7 @@ export function OrderStatusSection({ orderDetails, reset }) {
   });
 
   return (
-    <div className="pl-6 pt-20">
+    <div className="pl-6 pt-20 pb-28 mb-8">
       <h1 className="text-4xl font-bold drop-shadow pb-6">Your Order</h1>
       <p className="text-2xl pb-2">{orderDetails.name}</p>
       <p className="text-2xl pb-2">{orderDetails.email}</p>
@@ -51,7 +51,7 @@ export function OrderStatusSection({ orderDetails, reset }) {
           background: "rgba(125, 0, 100, 0.1)",
         }}
       >
-        {orderDetails.toppings.map((topping, index) => {
+        {orderDetails?.toppings?.map((topping, index) => {
           const name = colorLabel(
             topping,
             PIZZA_TOPPINGS.find((t) => t.id === topping).name

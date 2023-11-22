@@ -69,6 +69,10 @@ export function generateProgress(type: string): number {
 export function generateMiles(message: string): number {
   switch (message) {
     case "The order is on its way to your address.":
+      return 3.5;
+    case "The order is 3 miles away.":
+      return 3;
+    case "The order is 2 miles away.":
       return 2;
     case "The order is 1 mile away.":
       return 1;
@@ -81,12 +85,16 @@ export function generateMiles(message: string): number {
 
 export function generateDeliveryProgress(miles: number): number {
   switch (miles) {
-    case 2:
+    case 3.5:
       return 10;
-    case 1:
+    case 3:
       return 30;
+    case 2:
+      return 50;
+    case 1:
+      return 70;
     case 0.5:
-      return 65;
+      return 80;
     default:
       return 100;
   }
